@@ -79,7 +79,7 @@ class ProductController extends Controller
     }
     
     // Admin Only
-    public function deleteProduct(Request $request, $id){
+    public function deleteProduct(Request $request){
         $productId = $request->validate([
             'id' => 'numeric'
         ]);
