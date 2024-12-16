@@ -43,7 +43,7 @@ class AuthController extends Controller
             $user = Auth::user(); 
             $token = auth('api')->login($user);    
             return response()->json([
-                'message' => 'Giris basarili',
+                'message' => 'Login successfully',
                 'access_token' => $token,
                 'token_type' => 'bearer',
                 'expires_in' => auth('api')->factory()->getTTL()." minute",
@@ -66,10 +66,5 @@ class AuthController extends Controller
         } catch (\Exception $e) {
             return response()->json(['error' => 'Error token verification'], 500);
         }
-    }
-
-    public function authCheck(){
-        $user = Auth::user();
-        return response()->json(['messages' => $user]);
     }
 }
