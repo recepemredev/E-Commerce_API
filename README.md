@@ -21,46 +21,86 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+# E-Commerce API
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Project Overview
+This E-Commerce API is a RESTful service built using Laravel, designed to handle various operations required for an e-commerce platform. The API supports functionalities such as product management, order processing, user authentication, and more. It aims to provide a robust, secure, and scalable solution for handling e-commerce transactions.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/recepemredev/E-Commerce_API.git
+   cd E-Commerce_API
+   ```
 
-## Laravel Sponsors
+2. **Install Dependencies**:
+   ```bash
+   composer install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Set Up Environment**:
+   ```bash
+   cp .env.example .env
+   ```
 
-### Premium Partners
+   Configure your database and API keys in the `.env` file.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. **Run Database Migrations**:
+   ```bash
+   php artisan migrate
+   ```
+
+5. **Generate JWT Secret**:
+   ```bash
+   php artisan jwt:secret
+   ```
+
+6. **Start the Development Server**:
+   ```bash
+   php artisan serve
+   ```
+
+## Testing
+You can test the API using tools like Postman or any HTTP client by sending requests to the specified endpoints.
+
+
+## Endpoints
+### Authentication
+- **POST /api/auth/login**: Login user
+- **POST /api/auth/register**: Register user
+- **POST /api/auth/logout**: Logout user
+
+### Products
+- **GET /api/products**: List all products
+- **GET /api/products/{id}**: Get product details
+- **POST /api/products**: Create new product (Admin only)
+- **PUT /api/products/{id}**: Update product (Admin only)
+- **DELETE /api/products/{id}**: Delete product (Admin only)
+
+### Cart
+- **GET /api/cart**: View current cart
+- **POST /api/cart/items**: Add item to cart
+- **PUT /api/cart/items/{id}**: Update item from cart
+- **DELETE /api/cart/items/{id}**: Remove item from cart
+
+### Orders
+- **POST /api/orders**: Create new order
+- **GET /api/orders/{id}**: Get order details
+
+## Development
+The project uses Laravel as the backend framework.
+For testing, use Postman or any HTTP client to interact with the API.
+Ensure proper handling of tokens, especially for authentication and authorization.
+
+## Postman Documentation
+
+[Postman Request Documentation](https://documenter.getpostman.com/view/34784019/2sAYHzHPDN)
 
 ## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contributions are welcome! If you find a bug or want to add a new feature, feel free to open a pull request.
+Please ensure your code follows the project’s coding standards and passes the tests.
+Follow the code of conduct for contributing to this project.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. See the LICENSE file for details.
