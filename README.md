@@ -86,6 +86,7 @@ You can test the API using tools like Postman or any HTTP client by sending requ
 
 ### Orders
 - **POST /api/orders**: Create new order
+- **GET /api/orders**: List all orders 
 - **GET /api/orders/{id}**: Get order details
 
 ## Development
